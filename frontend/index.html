@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vieira Acompanha</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-4">Vieira Acompanha</h2>
+
+    <!-- Seleção do sistema -->
+    <div class="row text-center mb-3">
+      <div class="col"><button class="btn btn-outline-secondary w-100" onclick="selecionarSistema('new')">Sistema New</button></div>
+      <div class="col"><button class="btn btn-outline-secondary w-100" onclick="selecionarSistema('c6')">Sistema C6</button></div>
+      <div class="col"><button class="btn btn-outline-secondary w-100" onclick="selecionarSistema('facta')">Sistema Facta</button></div>
+    </div>
+
+    <!-- Campo de data (único campo usado atualmente) -->
+    <div class="mb-3">
+      <input type="date" id="data" class="form-control" placeholder="Data">
+    </div>
+
+    <!-- Botão de iniciar -->
+    <button id="btnBuscar" class="btn btn-primary mb-3 w-100" onclick="buscar()">Iniciar</button>
+
+    <div id="alerta" class="alert alert-danger mt-3 d-none" role="alert"></div>
+
+    <!-- Barra de loading animada -->
+    <div id="loading" class="mb-3" style="display:none;">
+      <div class="loading-bar"></div>
+    </div>
+
+    <!-- Tabela de visualização (ainda não utilizada no script atual) -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Banco</th>
+          <th>N° Contrato</th>
+          <th>Valor Parcela</th>
+          <th>Prazo</th>
+          <th>Nome</th>
+        </tr>
+      </thead>
+      <tbody id="tabela"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
